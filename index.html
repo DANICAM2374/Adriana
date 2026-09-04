@@ -1,62 +1,238 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Adriana ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Te amo, Adriana ❤️</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        min-height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff416c, #ff8fa3);
+        color: white;
+        overflow-x: hidden;
+    }
+
+    /* Pantalla inicial */
+    .inicio {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff416c, #ff8fa3);
+        z-index: 10;
+        animation: desaparecer 1s ease 2.5s forwards;
+    }
+
+    .corazon {
+        font-size: 150px;
+        animation: latido 0.8s infinite;
+        filter: drop-shadow(0 10px 25px rgba(0,0,0,0.3));
+    }
+
+    @keyframes latido {
+        0%, 100% {
+            transform: scale(1);
         }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #ff4b6e, #ff9a9e);
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        50% {
+            transform: scale(1.18);
+        }
+    }
+
+    @keyframes desaparecer {
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    /* Contenido */
+    .pagina {
+        width: min(1100px, 94%);
+        margin: auto;
+        padding: 45px 0;
+        opacity: 0;
+        animation: aparecer 1.2s ease 2.4s forwards;
+    }
+
+    @keyframes aparecer {
+        to {
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: clamp(36px, 6vw, 65px);
+        margin: 0 0 35px;
+        text-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    }
+
+    /* Fotos */
+    .fotos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .foto {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 25px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Secciones */
+    .secciones {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .seccion {
+        background: rgba(255,255,255,0.18);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 25px;
+        padding: 25px 30px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .seccion h2 {
+        text-align: center;
+        margin-top: 0;
+        font-size: 25px;
+    }
+
+    ul {
+        padding-left: 25px;
+        margin-bottom: 0;
+    }
+
+    li {
+        font-size: 18px;
+        margin: 12px 0;
+        line-height: 1.4;
+    }
+
+    /* Adaptación para celular */
+    @media (max-width: 700px) {
+
+        .pagina {
+            width: 94%;
+            padding: 30px 0;
         }
 
-        .contenedor {
-            max-width: 500px;
+        .corazon {
+            font-size: 110px;
         }
 
-        img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .fotos {
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
-        h1 {
-            font-size: 42px;
-            margin: 10px 0;
+        .foto {
+            height: 230px;
+            border-radius: 18px;
         }
 
-        p {
-            font-size: 21px;
+        .secciones {
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
-    </style>
-</head>
 
-<body>
+        .seccion {
+            padding: 18px 12px;
+            border-radius: 18px;
+        }
 
-    <div class="contenedor">
+        .seccion h2 {
+            font-size: 18px;
+        }
 
-        <img src="Screenshot_2026-08-31-17-54-33-24_99c04817c0de5652397fc8b56c3b3817.jpg" alt="Adriana">
+        li {
+            font-size: 14px;
+            margin: 9px 0;
+        }
+    }
+</style>
 
-        <h1>❤️ Te amo, Adriana ❤️</h1>
+</head><body><!-- Corazón inicial -->
+<div class="inicio">
+    <div class="corazon">❤️</div>
+</div>
 
-        <p>Esta pequeña página es especialmente para ti. 💕</p>
+<!-- Página -->
+<main class="pagina">
+
+    <h1>TE AMO, ADRIANA ❤️</h1>
+
+    <!-- Fotos -->
+    <div class="fotos">
+
+        <img
+            class="foto"
+            src="Screenshot_2026-08-31-17-54-33-24_99c04817c0de5652397fc8b56c3b3817.jpg"
+            alt="Adriana"
+        >
+
+        <img
+            class="foto"
+            src="1788479371036.png"
+            alt="Adriana"
+        >
 
     </div>
 
+    <!-- Dos secciones -->
+    <div class="secciones">
+
+        <section class="seccion">
+            <h2>Cosas que me gustan de Adriana ❤️😽💉</h2>
+
+            <ul>
+                <li>Tu forma de ser</li>
+                <li>Que me digas “puto”</li>
+                <li>Que seas expresiva</li>
+                <li>La forma en la cual te conocí</li>
+                <li>Tu cuerpo</li>
+                <li>Tus orejas</li>
+                <li>Tus gustos</li>
+                <li>Y así...</li>
+            </ul>
+        </section>
+
+        <section class="seccion">
+            <h2>Cosas que no sabías de mí 😼</h2>
+
+            <ul>
+                <li>Que soy alérgico a los desinfectantes</li>
+                <li>A los perfumes amaderados de mujer</li>
+                <li>Burló mucho</li>
+                <li>Me gusta poner incómodo, muy incómodo</li>
+                <li>Tengo una deformidad en la frente por un golpe de niño, como un hematoma subcutáneo craneal</li>
+                <li>Amo dormir, pero me cuesta hacerlo</li>
+                <li>Sí, no soy muy abierto para contar cosas mías</li>
+            </ul>
+        </section>
+
+    </div>
+
+</main>
+
 </body>
-</html>
+    </html>
+    
